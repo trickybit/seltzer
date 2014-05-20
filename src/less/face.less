@@ -1,0 +1,6 @@
+.face(@color: magenta) {
+  & * {
+    background-color: fade(@color, 10%);
+    box-shadow: 0 0 0 1px @color;
+  }
+}
