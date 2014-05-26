@@ -1,0 +1,20 @@
+.remedy(@prop, @value) when(isunit(@value, rem)) {
+  @{prop}: round((16px * unit(@value)));
+  @{prop}: @value;
+}
+
+.remedy(@prop, @value) when(isunit(@value, '%')) {
+  .remedy(@prop, unit((@value / 100), rem));
+}
+
+.remedy(@prop, @value) when(isunit(@value, px)) {
+  .remedy(@prop, unit((@value / 16), rem));
+}
+
+.remedy(@prop, @value) when(isunit(@value, em)) {
+  .remedy(@prop, unit(@value, rem));
+}
+
+.remedy(@prop, @value) when(isunit(@value, ex)) {
+  .remedy(@prop, unit((@value * 0.5), rem));
+}
