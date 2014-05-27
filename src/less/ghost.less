@@ -1,8 +1,42 @@
-.wireframe ( @color: fade(blue, 25%) ) {
-  & * {
-    background+: linear-gradient(0, @color 1px, transparent 1px);
-    background-size+: 100% 1em;
-    background+: linear-gradient(90deg, @color 1px, transparent 1px);
-    background-size+: 1em 100%;
+.ghost-hatch(@color: blue, @angle: 1) {
+  background+: linear-gradient((45deg * @angle), transparent 48%, fade(@color, 50%) 48%, fade(@color, 50%) 52%, transparent 52%);
+  background-size+: 1em 1em;
+}
+
+.ghost-crosshatch(@color: blue) {
+  .ghost-hatch(@color, 1);
+  .ghost-hatch(@color, -1);
+}
+
+.ghost-rule(@color: blue, @angle: 1) {
+  background+: linear-gradient((90deg * @angle), fade(@color, 50%) 1px, transparent 1px);
+  background-position+: -1px -1px;
+  background-size+: 1em 1em;
+}
+
+.ghost-grid(@color: blue, @style: ruled) when(@style = dotted) {
+  @faded: fade(@color, 50%);
+  background+: linear-gradient(45deg, @faded 1px, transparent 1px);
+  background+: linear-gradient(135deg, @faded 1px, transparent 1px);
+  background+: linear-gradient(225deg, @faded 1px, transparent 1px);
+  background+: linear-gradient(315deg, @faded 1px, transparent 1px);
+  
+  background-size+: 1em 1em;
+}
+
+.ghost-grid(@color: blue, @style: ruled) when(@style = ruled) {
+  .ghost-rule(@color, 0);
+  .ghost-rule(@color, 1);
+}
+
+.ghost-face(@color: magenta) {
+  &,
+  &:before,
+  &:after
+  *,
+  *:before,
+  *:after {
+    background-color: fade(@color, 25%);
+    box-shadow: inset 0 0 0 1px @color;
   }
 }
