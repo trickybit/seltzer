@@ -2,6 +2,67 @@
 
 LESS mix-ins
 
+### Ghost crosshatch
+#### Input
+```css
+.ghost-crosshatch(blue); 
+```
+#### Output
+&#9641;
+
+
+### Ghost hatch
+#### Input
+```css
+.ghost-hatch(blue, 1); 
+```
+#### Output
+&#9640;
+
+#### Input
+```css
+.ghost-hatch(blue, -1); 
+```
+#### Output
+&#9639;
+
+### Ghost rule
+```css
+.ghost-rule(blue, 0);
+```
+#### Output
+&#9636;
+
+#### Input
+```css
+.ghost-rule(blue, 1);
+```
+#### Output
+&#9637;
+
+### Ghost grid
+#### Input
+```css
+.ghost-grid(blue, dotted);
+```
+#### Output
+&#11820;
+
+#### Input
+```css
+.ghost-grid(blue, ruled);
+```
+#### Output
+&#9638;
+
+### Ghost face
+#### Input
+```css
+.ghost-face(magenta);
+```
+#### Output
+&#9712;
+
 ### Ratio
 
 #### Input
