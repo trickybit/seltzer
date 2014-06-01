@@ -2,6 +2,17 @@
 
 LESS mix-ins
 
+### Ratio
+
+#### Input
+```css
+.ratio(1 of 4, width, 100%);
+```
+#### Output
+```css
+width: 25%;
+```
+
 ### RGB Kind
 
 #### Input
