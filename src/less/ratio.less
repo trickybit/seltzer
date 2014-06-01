@@ -1,5 +1,3 @@
-// usage: .ratio(1 of 4, width, 100%);
-
 .ratio (@ratio, @prop, @value) {
   @p: ~`+"@{ratio}".match(/(\d+)\D*(\d+)/)[1]`;
   @q: ~`+"@{ratio}".match(/(\d+)\D*(\d+)/)[2]`;
