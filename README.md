@@ -1,4 +1,4 @@
-seltzer
+Seltzer
 =======
 
 LESS mix-ins
