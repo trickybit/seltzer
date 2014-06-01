@@ -5,7 +5,7 @@ LESS mix-ins
 ### RGB Kind
 
 #### Input
-```less
+```css
 .rgb-kind(background-color, fade(red, 50%));
 ```
 #### Output
