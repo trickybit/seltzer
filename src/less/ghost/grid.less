@@ -1,0 +1,16 @@
+@import 'rule';
+
+.ghost-grid(@color: blue, @style: ruled) when(@style = dotted) {
+  @faded: fade(@color, 50%);
+  background+: linear-gradient(45deg, @faded 1px, transparent 1px);
+  background+: linear-gradient(135deg, @faded 1px, transparent 1px);
+  background+: linear-gradient(225deg, @faded 1px, transparent 1px);
+  background+: linear-gradient(315deg, @faded 1px, transparent 1px);
+  
+  background-size+: 1em 1em;
+}
+
+.ghost-grid(@color: blue, @style: ruled) when(@style = ruled) {
+  .ghost-rule(@color, 0);
+  .ghost-rule(@color, 1);
+}
