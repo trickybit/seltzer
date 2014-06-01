@@ -1,0 +1,4 @@
+.ghost-hatch(@color: blue, @angle: 1) {
+  background+: linear-gradient((45deg * @angle), transparent 48%, fade(@color, 50%) 48%, fade(@color, 50%) 52%, transparent 52%);
+  background-size+: 1em 1em;
+}
