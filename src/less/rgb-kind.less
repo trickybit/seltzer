@@ -1,0 +1,7 @@
+.rgb-kind(@property, @color) {
+  @{property}: rgb(red(@color), green(@color), blue(@color));
+}
+
+.rgb-kind(@property, @color) when (alpha(@color) < 1) {
+  @{property}: @color;
+}
