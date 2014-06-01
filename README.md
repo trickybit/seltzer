@@ -13,6 +13,21 @@ LESS mix-ins
 width: 25%;
 ```
 
+### Remedy
+#### Input
+```css
+.remedy(font-size, 1em);
+.remedy(font-size, 16px);
+.remedy(font-size, 100%);
+.remedy(font-size, 1em);
+.remedy(font-size, 2ex);
+```
+#### Output
+```css
+font-size: 16px;
+font-size: 1rem;
+```
+
 ### RGB Kind
 
 #### Input
