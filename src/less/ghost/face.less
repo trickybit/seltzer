@@ -1,0 +1,11 @@
+.ghost-face(@color: magenta) {
+  &,
+  &:before,
+  &:after
+  *,
+  *:before,
+  *:after {
+    background-color: fade(@color, 25%);
+    box-shadow: inset 0 0 0 1px @color;
+  }
+}
