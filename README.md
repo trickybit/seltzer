@@ -6,7 +6,7 @@ LESS mix-ins
 
 #### Input
 ```css
-.ratio(1 of 4, width, 100%);
+.ratio(width, 100%, 1 of 4);
 ```
 #### Output
 ```css
