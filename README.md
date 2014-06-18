@@ -13,30 +13,19 @@ LESS mix-ins
 width: 25%;
 ```
 
-### Remedy
+### Measured
 #### Input
 ```css
-.remedy(font-size, 1em);
-.remedy(font-size, 16px);
-.remedy(font-size, 100%);
-.remedy(font-size, 1em);
-.remedy(font-size, 2ex);
+.measured(font-size, 1rem);
+.measured(width, 100vmin);
+.measured(color, fade(green, 50%));
 ```
 #### Output
 ```css
 font-size: 16px;
 font-size: 1rem;
-```
-
-### RGB Kind
-
-#### Input
-```css
-.rgb-kind(background-color, fade(red, 50%));
-```
-#### Output
-```css
-background-color: red;
-background-color: rgb(255,0,0,0.5);
-
+width: 100vm;
+width: 100vmin;
+color: #008000;
+color: rgba(0, 128, 0, 0.5);
 ```
