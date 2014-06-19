@@ -29,7 +29,7 @@ Iterates through a number range, putting a to, from and count variable in the sc
 }
 ```
 
-### Each-over
+### Each
 Iterates over a list, putting an item and count variable in the scope of the ruleset--passed as the last argument.
 
 #### Input
