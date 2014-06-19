@@ -1,0 +1,25 @@
+.each(@list; @rules) {
+  .each(over; @list; @rules);
+}
+
+.each-in(@list; @rules) {
+  .each(in; @list; @rules);
+}
+
+.each(@route; @list; @rules) {
+  
+  .iterate(@list; @count; @rules) when (@count > 0)  {
+    .iterate(@list; (@count - 1); @rules);
+    & when(@route = in) {
+      @key: extract(extract(@list, @count), 1);
+      @value: extract(extract(@list, @count), 2);
+      @rules();
+    }
+    & when(@route = over) {
+      @item: extract(@list, @count);
+      @rules();
+    }
+  }
+  
+  .iterate(@list; length(@list); @rules);
+}
