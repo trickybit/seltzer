@@ -3,13 +3,13 @@
 LESS mix-ins
 
 
-### Loop
+### For
 Iterates through a number range, putting a to, from and count variable in the scope of the ruleset--passed as the last argument.
 
 #### Input
 ```less
 .abc {
-  .loop(1,3; {
+  .for(1,3; {
     :nth-child(@{count}) { 
       left: @to - @count;
     };
@@ -35,7 +35,7 @@ Iterates over a list, putting an item and count variable in the scope of the rul
 #### Input
 ```less
 .abc {
-  .each-over(its, easy, as; {
+  .each(its, easy, as; {
     @{item}: @count;
   });
 }
@@ -49,14 +49,14 @@ Iterates over a list, putting an item and count variable in the scope of the rul
 }
 ```
 
-### Each-in
+### In
 Iterates over a list, putting a key and value variable in the scope of the ruleset--passed as the last argument. 
 The variables are extracted using the whitespace in each item.
 
 #### Input
 ```less
 .abc {
-  .each-in(its 1, easy 2, as 3; {
+  .in(its 1, easy 2, as 3; {
     @{key}: @value;
   });
 }
