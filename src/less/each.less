@@ -6,12 +6,3 @@
   }
   .iterate(@list; length(@list); @rules);
 }
-.each-in(@list; @rules) {
-  .iterate(@list; @count; @rules) when (@count > 0)  {
-    .iterate(@list; (@count - 1); @rules);
-    @key: extract(extract(@list, @count), 1);
-    @value: extract(extract(@list, @count), 2);
-    @rules();
-  }
-  .iterate(@list; length(@list); @rules);
-}
