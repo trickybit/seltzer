@@ -5,7 +5,7 @@ LESS mix-ins
 
 ### Each
 #### Input
-```css
+```less
 .abc {
   .each(its, easy, as; {
     @{item}: @count;
@@ -23,7 +23,7 @@ LESS mix-ins
 
 ### Each-in
 #### Input
-```css
+```less
 .abc {
   .each(its 1, easy 2, as 3; {
     @{key}: @value;
@@ -41,7 +41,7 @@ LESS mix-ins
 
 ### Measured
 #### Input
-```css
+```less
 .measured(font-size, 1rem);
 .measured(width, 100vmin);
 .measured(color, fade(green, 50%));
@@ -59,7 +59,7 @@ color: rgba(0, 128, 0, 0.5);
 ### Ratio
 
 #### Input
-```css
+```less
 .ratio(width, 100%, 1 of 4);
 ```
 #### Output
