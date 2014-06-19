@@ -1,4 +1,4 @@
-.loop(@range; @rules) {
+.for(@range; @rules) {
   @from: extract(@range, 1);
   @to: extract(@range, 2);
   .iterate(@count; @rules) when (@count >= @from)  {
