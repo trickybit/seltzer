@@ -13,7 +13,6 @@ Iterates through a number range, putting a to, from and count variable in the sc
     :nth-child(@{count}) { 
       from: @from;
       to: @to;
-      count: @count;
     };
   });
 }
