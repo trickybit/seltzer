@@ -24,7 +24,7 @@ Iterates over a list, putting an item and count variable in the scope of the rul
 ```
 
 ### Each-in
-Iterates over a list, putting a key and value in the scope of the ruleset--passed as the last argument. 
+Iterates over a list, putting a key and value variable in the scope of the ruleset--passed as the last argument. 
 The variables are extracted using the whitespace in each item.
 
 #### Input
