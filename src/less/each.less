@@ -6,10 +6,6 @@
   .each(in; @list; @rules);
 }
 
-.each-to(@range; @rules) {
-  .each(@range; @rules);
-}
-
 .each(@range; @rules) {
   .iterate(@count; @rules) when (@count > 0)  {
     .iterate((@count - 1); @rules);
