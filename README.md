@@ -4,12 +4,36 @@ LESS mix-ins
 
 
 ### Each
+Iterates to a number, putting a count variable in the scope of the ruleset--passed as the last argument.
+
+#### Input
+```less
+.abc {
+  .each(1-3; {
+    :nth-child(@{count}) { easy:  @count };
+  });
+}
+```
+#### Output
+```css
+.abc :nth-child(1) {
+  easy: 1;
+}
+.abc :nth-child(2) {
+  easy: 2;
+}
+.abc :nth-child(3) {
+  easy: 3;
+}
+```
+
+### Each-over
 Iterates over a list, putting an item and count variable in the scope of the ruleset--passed as the last argument.
 
 #### Input
 ```less
 .abc {
-  .each(its, easy, as; {
+  .each-over(its, easy, as; {
     @{item}: @count;
   });
 }
@@ -30,7 +54,7 @@ The variables are extracted using the whitespace in each item.
 #### Input
 ```less
 .abc {
-  .each(its 1, easy 2, as 3; {
+  .each-in(its 1, easy 2, as 3; {
     @{key}: @value;
   });
 }
