@@ -4,12 +4,12 @@ LESS mix-ins
 
 
 ### Each
-Iterates to a number, putting a count variable in the scope of the ruleset--passed as the last argument.
+Iterates a number range, putting a count variable in the scope of the ruleset--passed as the last argument.
 
 #### Input
 ```less
 .abc {
-  .each(1-3; {
+  .each(1,3; {
     :nth-child(@{count}) { easy:  @count };
   });
 }
