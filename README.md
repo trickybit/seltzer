@@ -3,27 +3,34 @@
 LESS mix-ins
 
 
-### Each
-Iterates a number range, putting a count variable in the scope of the ruleset--passed as the last argument.
+### Loop
+Iterates through a number range, putting a to, from and count variable in the scope of the ruleset--passed as the last argument.
 
 #### Input
 ```less
 .abc {
-  .each(1,3; {
-    :nth-child(@{count}) { easy:  @count };
+  .loop(1,3; {
+    :nth-child(@{count}) { 
+      from: @from;
+      to: @to;
+      count: @count;
+    };
   });
 }
 ```
 #### Output
 ```css
 .abc :nth-child(1) {
-  easy: 1;
+  from: 1;
+  to: 3;
 }
 .abc :nth-child(2) {
-  easy: 2;
+  from: 1;
+  to: 3;
 }
 .abc :nth-child(3) {
-  easy: 3;
+  from: 1;
+  to: 3;
 }
 ```
 
