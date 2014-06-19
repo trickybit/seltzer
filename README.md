@@ -4,6 +4,8 @@ LESS mix-ins
 
 
 ### Each
+Iterates over a list, putting an item and count variable in the scope of the ruleset--passed as the last argument.
+
 #### Input
 ```less
 .abc {
@@ -22,6 +24,9 @@ LESS mix-ins
 ```
 
 ### Each-in
+Iterates over a list, putting a key and value in the scope of the ruleset--passed as the last argument. 
+The variables are extracted using the whitespace in each item.
+
 #### Input
 ```less
 .abc {
@@ -40,6 +45,8 @@ LESS mix-ins
 ```
 
 ### Measured
+Include fallback measures for CSS units.
+
 #### Input
 ```less
 .measured(font-size, 1rem);
