@@ -1,4 +1,4 @@
-## seltzer
+## SELTZER
 
 LESS mix-ins
 
