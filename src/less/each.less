@@ -7,11 +7,13 @@
 }
 
 .each(@range; @rules) {
-  .iterate(@count; @rules) when (@count > 0)  {
+  @from: extract(@range, 1);
+  @to: extract(@range, 2);
+  .iterate(@count; @rules) when (@count > @from)  {
     .iterate((@count - 1); @rules);
     @rules();
   }
-  .iterate((abs(@range) + 1); @rules);
+  .iterate(@to; @rules);
 }
 
 .each(@route; @list; @rules) {
