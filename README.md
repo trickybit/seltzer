@@ -11,8 +11,7 @@ Iterates through a number range, putting a to, from and count variable in the sc
 .abc {
   .loop(1,3; {
     :nth-child(@{count}) { 
-      from: @from;
-      to: @to;
+      left: @to - @count;
     };
   });
 }
@@ -20,16 +19,13 @@ Iterates through a number range, putting a to, from and count variable in the sc
 #### Output
 ```css
 .abc :nth-child(1) {
-  from: 1;
-  to: 3;
+  left: 2;
 }
 .abc :nth-child(2) {
-  from: 1;
-  to: 3;
+  left: 1;
 }
 .abc :nth-child(3) {
-  from: 1;
-  to: 3;
+  left: 0;
 }
 ```
 
