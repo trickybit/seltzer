@@ -89,6 +89,46 @@ color: #008000;
 color: rgba(0, 128, 0, 0.5);
 ```
 
+### MSIE
+Mix in a ruleset for a specified version of Internet Explorer. This requires conditional compiler comments 
+wrapping the root element
+
+```html
+<!--[if IE 6 ]><html class="msie6"><![endif]-->
+<!--[if IE 7 ]><html class="msie7"><![endif]-->
+<!--[if IE 8 ]><html class="msie8"><![endif]-->
+<!--[if IE 9 ]><html class="msie9"><![endif]-->
+<!--[if IE 10 ]><html class="msie10"><![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!--><html><!--<![endif]-->
+```
+
+#### Input
+```less
+.context {
+  .msie(9, 10; {
+    ie: older;
+  });
+  .msie(11; {
+    ie: newer;
+  });
+}
+```
+#### Output
+```css
+.msie9 .context {
+  ie: older;
+}
+.msie10 .context {
+  ie: older;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .context ::-ms-backdrop,
+  .context {
+    ie: newer;
+  }
+}
+```
+
 ### Ratio
 
 #### Input
