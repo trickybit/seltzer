@@ -1,12 +1,16 @@
 .msie(@versions; @rules) {
   .each(@versions, {
     
-    & when(@item < 11) {
+    & when(@item < 10) {
       .msie@{item} & {
         @rules();
       }
     }
-    
+    & when(@item = 10) {
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+        @rules();
+      }
+    }
     & when(@item = 11) {
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
         ::-ms-backdrop, & {
