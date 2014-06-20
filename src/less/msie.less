@@ -1,0 +1,18 @@
+.msie(@versions; @rules) {
+  .each(@versions, {
+    
+    & when(@item < 11) {
+      .msie@{item} & {
+        @rules();
+      }
+    }
+    
+    & when(@item = 11) {
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+        ::-ms-backdrop, & {
+          @rules();
+        }
+      }
+    }
+  });
+}
