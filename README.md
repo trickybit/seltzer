@@ -121,7 +121,7 @@ wrapping the root element
   ie: older;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .context ::-ms-backdrop,
+  .context::-ms-backdrop,
   .context {
     ie: newer;
   }
