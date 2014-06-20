@@ -117,8 +117,10 @@ wrapping the root element
 .msie9 .context {
   ie: older;
 }
-.msie10 .context {
-  ie: older;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .context {
+    ie: older;
+  }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .context::-ms-backdrop,
