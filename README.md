@@ -157,7 +157,7 @@ main aside {
 }
 ```
 
-### Slice-off
+### Slice.off
 Puts a slice-offset variable in the ruleset scope. Use the offset number to extract the correct value from a list.
 
 #### Input
@@ -166,16 +166,16 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   @row-alignments: top middle bottom;
   @col-alignments: left center right;
   
-  .slice-off.col(3 x 3; 5; {
+  .slice.off.col(3 x 3; 5; {
     text-align: extract(@col-alignments, @slice-offset);
   });
   
-  .slice-off.row(3 x 3; 5; {
+  .slice.off.row(3 x 3; 5; {
     vertical-align: extract(@row-alignments, @slice-offset);
   });
   
   .stem {
-    .slice-off.col.flip(3 x 3; 1; {
+    .slice.off.col.flip(3 x 3; 1; {
       vertical-align: extract(@col-alignments, @slice-offset);
     });
   }
