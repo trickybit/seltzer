@@ -142,7 +142,7 @@ width: 25%;
 ```
 
 ### Slice-off
-Use the returned offset to extract the correct value from a list.
+Puts a slice-offset variable in the ruleset scope. Use the offset number to extract the correct value from a list.
 
 #### Input
 ```less
@@ -150,29 +150,19 @@ Use the returned offset to extract the correct value from a list.
   @row-alignments: left center right;
   @col-alignments: top middle bottom;
   
-  .slice-off.col(3 x 3; 1; {
-    text-align: extract(@row-alignments, @offset);
+  .slice-off.col(3 x 3; 8; {
+    vertical-align: extract(@col-alignments, @slice-offset);
   });
   
-  .slice-off.col(3 x 3; 5; {
-    text-align: extract(@row-alignments, @offset);
-  });
-  
-  .slice-off.row(3 x 3; 2; {
-    vertical-align: extract(@col-alignments, @offset);
-  });
-  
-  .slice-off.row(3 x 3; 8; {
-    vertical-align: extract(@col-alignments, @offset);
+  .slice-off.row(3 x 3; 5; {
+    text-align: extract(@row-alignments, @slice-offset);
   });
 }
 ```
 #### Output
 ```css
 :root {
-  text-align: left;
-  text-align: center;
-  vertical-align: top;
   vertical-align: bottom;
+  text-align: center;
 }
 ```
