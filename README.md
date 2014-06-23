@@ -134,11 +134,27 @@ wrapping the root element
 
 #### Input
 ```less
-.ratio(width, 100%, 1 of 4);
+main {
+  article {
+    .ratio(100%; 3 of 4; {
+      width: @ratio;
+    });
+  }
+  aside {
+    .ratio(100%; 1 of 4; {
+      width: @ratio;
+    });
+  }
+}
 ```
 #### Output
 ```css
-width: 25%;
+main article {
+  width: 75%;
+}
+main aside {
+  width: 25%;
+}
 ```
 
 ### Slice-off
