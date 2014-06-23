@@ -147,22 +147,22 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
 #### Input
 ```less
 :root {
-  @row-alignments: left center right;
-  @col-alignments: top middle bottom;
+  @row-alignments: top middle bottom;
+  @col-alignments: left center right;
   
-  .slice-off.col(3 x 3; 8; {
-    vertical-align: extract(@col-alignments, @slice-offset);
+  .slice-off.col(3 x 3; 5; {
+    text-align: extract(@col-alignments, @slice-offset);
   });
   
   .slice-off.row(3 x 3; 5; {
-    text-align: extract(@row-alignments, @slice-offset);
+    vertical-align: extract(@row-alignments, @slice-offset);
   });
 }
 ```
 #### Output
 ```css
 :root {
-  vertical-align: bottom;
   text-align: center;
+  vertical-align: middle;
 }
 ```
