@@ -188,6 +188,6 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   vertical-align: middle;
 }
 :root .stem {
-  vertical-align: right;
+  text-align: right;
 }
 ```
