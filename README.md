@@ -173,6 +173,12 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   .slice-off.row(3 x 3; 5; {
     vertical-align: extract(@row-alignments, @slice-offset);
   });
+  
+  .stem {
+    .slice-off.col.flip(3 x 3; 1; {
+      vertical-align: extract(@col-alignments, @slice-offset);
+    });
+  }
 }
 ```
 #### Output
@@ -180,5 +186,8 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
 :root {
   text-align: center;
   vertical-align: middle;
+}
+:root .stem {
+  vertical-align: right;
 }
 ```
