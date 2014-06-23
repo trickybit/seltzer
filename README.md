@@ -9,7 +9,7 @@ Iterates through a number range, putting a to, from and count variable in the sc
 #### Input
 ```less
 .abc {
-  .for(1,3; {
+  .for(1, 3; {
     :nth-child(@{count}) { 
       left: @to - @count;
     };
@@ -18,13 +18,13 @@ Iterates through a number range, putting a to, from and count variable in the sc
 ```
 #### Output
 ```css
-.abc :nth-child(1) {
+.abc :nth-child( 1) {
   left: 2;
 }
-.abc :nth-child(2) {
+.abc :nth-child( 2) {
   left: 1;
 }
-.abc :nth-child(3) {
+.abc :nth-child( 3) {
   left: 0;
 }
 ```
