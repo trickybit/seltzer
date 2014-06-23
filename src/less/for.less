@@ -1,9 +1,12 @@
 .for(@range; @rules) {
-  @from: extract(@range, 1);
-  @to: extract(@range, 2);
-  .iterate(@count; @rules) when (@count >= @from)  {
-    .iterate((@count - 1); @rules);
+  & {
+    @from: extract(@range, 1);
+    @to: extract(@range, 2);
+    .iterate(@to);
+  }
+  
+  .iterate(@count) when (@count >= @from)  {
+    .iterate((@count - 1));
     @rules();
   }
-  .iterate(@to; @rules);
 }
