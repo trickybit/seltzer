@@ -1,4 +1,4 @@
-.slice-off(@offset, @rules) {
+.slice-off(@slice-offset, @rules) {
   
   .row(@of, @n, @rules) {
     
