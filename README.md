@@ -10,7 +10,7 @@ Import directly.
 ```
 Import with a namepsace.
 ```
-@import "seltzer";
+@import "seltzer/seltzer";
 .seltzer.each(...)
 ```
 
