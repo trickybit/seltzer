@@ -1,0 +1,18 @@
+.measured(@prop, @value) {
+  
+  & when(iscolor(@value)) {
+    &  when (alpha(@value) < 1) {
+      @{prop}: rgb(red(@value), green(@value), blue(@value));
+    }
+  }
+  
+  & when(isunit(@value, rem)) {
+    @{prop}: round((16px * unit(@value)));
+  }
+  
+  & when(isunit(@value, vmin)) {
+    @{prop}: unit(@value, vm);
+  }
+  
+  @{prop}: @value;
+}

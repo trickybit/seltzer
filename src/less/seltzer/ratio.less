@@ -1,0 +1,6 @@
+.ratio(@value; @n-of; @rules) {
+  & {
+    @ratio: (@value * extract(@n-of, 1) / extract(@n-of, 3));
+    @rules();
+  }
+}
