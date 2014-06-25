@@ -2,6 +2,17 @@
 
 LESS mix-ins
 
+### Importing
+Import directly.
+```
+@import "seltzer/each";
+.each(...);
+```
+Import with a namepsace.
+```
+@import "seltzer";
+.seltzer.each(...)
+```
 
 ### For
 Iterates through a number range, putting a to, from and count variable in the scope of the ruleset--passed as the last argument.
