@@ -1,0 +1,75 @@
+@import "seltzer/for";
+@import "seltzer/each";
+@import "seltzer/in";
+@import "seltzer/measured";
+@import "seltzer/msie";
+@import "seltzer/ratio";
+@import "seltzer/slice";
+
+.abc {
+  .for(1, 3; {
+    :nth-child(@{count}) {
+      left: @to - @count;
+    };
+  });
+}
+
+.abc {
+  .each(its, easy, as; {
+    @{item}: @count;
+  });
+}
+
+.abc {
+  .in(its 1, easy 2, as 3; {
+    @{key}: @value;
+  });
+}
+.measured-test {
+  .measured(font-size, 1rem);
+  .measured(width, 100vmin);
+  .measured(color, fade(green, 50%));
+}
+
+.msie-test {
+  .msie(9, 10; {
+    ie: older;
+  });
+  .msie(11; {
+    ie: newer;
+  });
+}
+
+.ratio-test {
+  article {
+    .ratio(100%; 3 of 4; {
+      width: @ratio;
+    });
+  }
+  aside {
+    .ratio(100%; 1 of 4; {
+      width: @ratio;
+    });
+  }
+}
+
+.slice-test {
+  :root {
+    @row-alignments: top middle bottom;
+    @col-alignments: left center right;
+
+    .slice.off.col(3 x 3; 5; {
+      text-align: extract(@col-alignments, @slice-offset);
+    });
+
+    .slice.off.row(3 x 3; 5; {
+      vertical-align: extract(@row-alignments, @slice-offset);
+    });
+
+    .stem {
+      .slice.off.col.flip(3 x 3; 1; {
+        text-align: extract(@col-alignments, @slice-offset);
+      });
+    }
+  }
+}
