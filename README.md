@@ -187,7 +187,7 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   
   .stem {
     .slice.off.col.flip(3 x 3; 1; {
-      vertical-align: extract(@col-alignments, @slice-offset);
+      text-align: extract(@col-alignments, @slice-offset);
     });
   }
 }
