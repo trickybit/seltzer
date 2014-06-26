@@ -2,7 +2,7 @@
 @import "seltzer/each";
 @import "seltzer/in";
 @import "seltzer/measured";
-@import "seltzer/msie";
+@import "seltzer/oldie";
 @import "seltzer/ratio";
 @import "seltzer/slice";
 
@@ -31,11 +31,11 @@
   .measured(color, fade(green, 50%));
 }
 
-.msie-test {
-  .msie(9, 10; {
+.oldie-test {
+  .oldie(9, 10; {
     ie: older;
   });
-  .msie(11; {
+  .oldie(11; {
     ie: newer;
   });
 }
