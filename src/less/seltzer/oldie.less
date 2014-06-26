@@ -1,10 +1,10 @@
 @import "each";
 
-.msie(@versions; @rules) {
+.oldie(@versions; @rules) {
   .each(@versions, {
     
     & when(@item < 10) {
-      .msie@{item} & {
+      .ie@{item} & {
         @rules();
       }
     }
