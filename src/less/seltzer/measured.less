@@ -1,18 +1,27 @@
-.measured(@prop, @value) {
-  
-  & when(iscolor(@value)) {
-    &  when (alpha(@value) < 1) {
-      @{prop}: rgb(red(@value), green(@value), blue(@value));
+@import "each";
+
+.measured(@prop; @value) {
+  .each(@value; {
+
+    & when(iscolor(@item)) {
+      &  when (alpha(@item) < 1) {
+        @{prop}+_: rgb(red(@item), green(@item), blue(@item));
+      }
     }
-  }
-  
-  & when(isunit(@value, rem)) {
-    @{prop}: round((16px * unit(@value)));
-  }
-  
-  & when(isunit(@value, vmin)) {
-    @{prop}: unit(@value, vm);
-  }
-  
+
+    & when(isunit(@item, rem)) {
+      @{prop}+_: round((16px * unit(@item)));
+    }
+
+    & when(isunit(@item, vmin)) {
+      @{prop}+_: unit(@item, vm);
+    }
+
+    & when(iskeyword(@item)) {
+      @{prop}+_: @item;
+    }
+
+  });
+
   @{prop}: @value;
 }

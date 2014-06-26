@@ -89,6 +89,8 @@ Include fallback measures for CSS units.
 .measured(font-size, 1rem);
 .measured(width, 100vmin);
 .measured(color, fade(green, 50%));
+.measured(border; 1rem solid fade(red,50%));
+.measured(margin; 10vmin auto);
 ```
 #### Output
 ```css
@@ -98,6 +100,10 @@ width: 100vm;
 width: 100vmin;
 color: #008000;
 color: rgba(0, 128, 0, 0.5);
+border: 16px solid #ff0000;
+border: 1rem solid rgba(255, 0, 0, 0.5);
+margin: 10vm auto;
+margin: 10vmin auto;
 ```
 
 ### Oldie
