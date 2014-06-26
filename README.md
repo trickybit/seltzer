@@ -115,28 +115,28 @@ wrapping the root element
 #### Input
 ```less
 .context {
-  .msie(9, 10; {
-    ie: older;
+  .oldie(9, 10; {
+    old-fashioned: always;
   });
-  .msie(11; {
-    ie: newer;
+  .oldie(11; {
+    old-fashioned: infinite;
   });
 }
 ```
 #### Output
 ```css
-.msie9 .context {
-  ie: older;
+.oldie9 .context {
+  old-fashioned: always;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .context {
-    ie: older;
+    old-fashioned: always;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .context::-ms-backdrop,
   .context {
-    ie: newer;
+    old-fashioned: indeterminate;
   }
 }
 ```
