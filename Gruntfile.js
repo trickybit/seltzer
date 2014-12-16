@@ -33,7 +33,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', []);
-  grunt.registerTask('test', ['newer:jshint']);
+  grunt.registerTask('test', ['newer:jshint', 'less:specimen']);
   grunt.registerTask('build', ['clean', 'test']);
   //grunt.registerTask('site', ['clean', 'test', 'less']);
   //grunt.registerTask('deploy', ['site', 'gh-pages']);
