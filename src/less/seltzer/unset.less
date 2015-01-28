@@ -1,0 +1,207 @@
+.unset(@p) {
+  
+  & when
+  (@p = background),
+  (@p = background-image),
+  (@p = border),
+  (@p = box-shadow),
+  (@p = clear),
+  (@p = column-rule),
+  (@p = column-span),
+  (@p = counter-increment),
+  (@p = counter-reset),
+  (@p = float),
+  (@p = list-style-image),
+  (@p = mask),
+  (@p = max-height),
+  (@p = max-width),
+  (@p = outline),
+  (@p = perspectve),
+  (@p = quotes),
+  (@p = resize),
+  (@p = shape-outside),
+  (@p = text-shadow),
+  (@p = text-transform),
+  (@p = text-decoration),
+  (@p = transform),
+  (@p = transition) {
+    @{p}: none;
+  }
+  
+  & when (@p = border-collapse) {
+    @{p}: separate;
+  }
+  
+  & when (@p = list-style-position) {
+    @{p}: outside;
+  }
+  
+  & when (@p = background-color) {
+    @{p}: transparent;
+  }
+  
+  & when
+  (@p = overflow),
+  (@p = overflow-x),
+  (@p = overflow-y),
+  (@p = visibility) {
+    @{p}: visible;
+  }
+  
+  & when (@p = empty-cells) {
+    @{p}: show;
+  }
+  
+  & when (@p = caption-side) {
+    @{p}: top;
+  }
+  
+  & when (@p = font-size) {
+    @{p}: medium;
+  }
+  
+  & when
+  (@p = column-gap), 
+  (@p = font-style), 
+  (@p = font-weight),
+  (@p = font-variant),
+  (@p = letter-spacing),
+  (@p = white-space),
+  (@p = word-break),
+  (@p = word-spacing),
+  (@p = word-wrap) {
+    @{p}: normal;
+  }
+  
+  & when (@p = color), (@p = font-family){
+    @{p}: inherit;
+  }
+  
+  & when
+  (@p = align-self),
+  (@p = bottom), 
+  (@p = break-after),
+  (@p = break-before),
+  (@p = break-inside),
+  (@p = column-count),
+  (@p = column-width),
+  (@p = columns),
+  (@p = flex-basis),
+  (@p = font-kerning),
+  (@p = height),
+  (@p = image-rendering),
+  (@p = isolation),
+  (@p = left),
+  (@p = line-break),
+  (@p = line-height),
+  (@p = pointer-events), 
+  (@p = right),
+  (@p = table-layout),
+  (@p = text-rendering),
+  (@p = top),
+  (@p = width) {
+    @{p}: auto;
+  }
+  
+  & when
+  (@p = border-width), 
+  (@p = border-radius), 
+  (@p = border-spacing), 
+  (@p = image-orientation),
+  (@p = flex-grow),
+  (@p = margin),
+  (@p = margin-top),
+  (@p = margin-right),
+  (@p = margin-bottom),
+  (@p = margin-left),
+  (@p = min-width),
+  (@p = min-height),
+  (@p = order),
+  (@p = padding),
+  (@p = padding-top),
+  (@p = padding-right),
+  (@p = padding-bottom),
+  (@p = padding-left),
+  (@p = shape-image-threshold),
+  (@p = shape-margin),
+  (@p = text-indent) {
+    @{p}: 0;
+  }
+  
+  & when (@p = transition-delay), (@p = transition-duration) {
+    @{p}: 0s;
+  }
+  
+  & when (@p = align-content), (@p = align-items) {
+    @{p}: stretch;
+  }
+  
+  & when (@p = column-fill) {
+    @{p}: balance;
+  }
+  
+  & when (@p = flex-direction) {
+    @{p}: row;
+  }
+  
+  & when (@p = transform-style) {
+    @{p}: flat;
+  }
+  
+  & when (@p = vertical-align) {
+    @{p}: baseline;
+  }
+  
+  & when (@p = object-position) {
+    @{p}: 50% 50%;
+  }
+  
+  & when (@p = transform-origin) {
+    @{p}: 50% 50% 0;
+  }
+  
+  & when (@p = flex-shrink), (@p = opacity) {
+    @{p}: 1;
+  }
+  
+  & when (@p = direction) {
+    @{p}: ltr; //should this be inherit for practical usage
+  }
+  
+  & when (@p = writing-mode) {
+    @{p}: horizontal-tb;
+  }
+  
+  & when (@p = object-fit) {
+    @{p}: fill;
+  }
+  
+  & when (@p = justify-content) {
+    @{p}: flex-start;
+  }
+  
+  & when (@p = text-align) {
+    @{p}: start;
+  }
+  
+  & when (@p = unicode-range) {
+    @{p}: U+0-10FFFF;
+  }
+  
+  & when (@p = flex) {
+    @{p}: 0 1 auto;
+  }
+  
+  & when (@p = position) {
+    @{p}: static;
+  }
+  
+  & when (@p = position) {
+    @{p}: static;
+  }
+  
+  & when (@p = box-sizing) {
+    @{p}: content-box;
+  }
+  
+}
