@@ -214,11 +214,13 @@ Unset css properties like the [keyword](//developer.mozilla.org/en-US/docs/Web/C
 ```
 .context {
   .unset(background);
+  .unset(transform-origin);
 }
 ```
 ### Output
 ```
 .context {
   background: none;
+  transform-origin: 50% 50% 0;
 }
 ```
