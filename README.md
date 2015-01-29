@@ -207,3 +207,18 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   text-align: right;
 }
 ```
+##Unset
+Unset css properties like the [keyword](//developer.mozilla.org/en-US/docs/Web/CSS/unset) does, but  in a way that also supports older browsers. This will not support CSS properties that are only available in browsers supporting the unset keyword.
+
+### Input
+```
+.context {
+  .unset(background);
+}
+```
+### Output
+```
+.context {
+  background: none;
+}
+```
