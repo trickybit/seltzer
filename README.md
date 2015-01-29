@@ -214,6 +214,7 @@ Unset css properties like the [keyword](//developer.mozilla.org/en-US/docs/Web/C
 ```
 .context {
   .unset(background);
+  .unset(flex);
   .unset(transform-origin);
 }
 ```
@@ -221,6 +222,7 @@ Unset css properties like the [keyword](//developer.mozilla.org/en-US/docs/Web/C
 ```
 .context {
   background: none;
+  flex: 0 1 auto;
   transform-origin: 50% 50% 0;
 }
 ```
