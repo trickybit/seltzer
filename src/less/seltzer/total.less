@@ -1,0 +1,15 @@
+.total(@n, @rules) {
+  & when (@n = 1) {
+    &:only-child {
+      @rules();
+    }
+  }
+  & when (@n > 1) {
+    &:nth-last-child(@{n}):first-child {
+      &, 
+      ~ :nth-child(-n+@{n}) {
+        @rules();
+      }
+    }
+  }
+}

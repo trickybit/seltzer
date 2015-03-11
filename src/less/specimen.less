@@ -5,6 +5,7 @@
 @import "seltzer/oldie";
 @import "seltzer/ratio";
 @import "seltzer/slice";
+@import "seltzer/total";
 
 .abc {
   .for(1, 3; {
@@ -74,4 +75,25 @@
       });
     }
   }
+}
+
+.total-test {
+  @color: limegreen;
+  background-color: silver;
+
+  .total(1, {
+    background-color: fade(@color, 20%);
+  });
+  .total(2, {
+    background-color: fade(@color, 40%);
+  });
+  .total(3, {
+    background-color: fade(@color, 60%);
+  });
+  .total(4, {
+    background-color: fade(@color, 80%);
+  });
+  .total(5, {
+    background-color: @color;
+  });
 }
