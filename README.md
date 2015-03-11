@@ -207,3 +207,26 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   text-align: right;
 }
 ```
+### Total
+Apply a ruleset when there is a specified total of children. http://alistapart.com/article/quantity-queries-for-css
+#### Input
+```less
+.child {
+  .total(1, {
+    background-color: limegreen;
+  });
+  .total(2, {
+    background-color: yellow;
+  });
+}
+```
+#### Output
+```less
+.child:only-child {
+  background-color: limegreen;
+}
+.child:nth-last-child( 2):first-child,
+.child:nth-last-child( 2):first-child ~ :nth-child( -n + 2) {
+  background-color: yellow;
+}
+```
