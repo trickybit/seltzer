@@ -5,6 +5,7 @@
 @import "seltzer/oldie";
 @import "seltzer/ratio";
 @import "seltzer/slice";
+@import "seltzer/total";
 
 .abc {
   .for(1, 3; {
@@ -73,5 +74,48 @@
         text-align: extract(@col-alignments, @slice-offset);
       });
     }
+  }
+}
+
+.total-tests {
+  padding: 1ex 1em;
+  display: flex;
+  
+  .test {
+    @color: limegreen;
+    @color2: yellow;
+    padding: 1ex 1em;
+    background-color: silver;
+    
+    .total(1, {
+      background-color: fade(@color, 20%);
+    });
+    .total(2, {
+      background-color: fade(@color, 40%);
+    });
+    .total(3, {
+      background-color: fade(@color, 60%);
+    });
+    .total(4, {
+      background-color: fade(@color, 80%);
+    });
+    .total(5, {
+      background-color: fade(@color, 100%);
+    });
+    .total(6, {
+      background-color: fade(@color2, 20%);
+    });
+    .total(7, {
+      background-color: fade(@color2, 40%);
+    });
+    .total(8, {
+      background-color: fade(@color2, 60%);
+    });
+    .total(9, {
+      background-color: fade(@color2, 80%);
+    });
+    .total(10, {
+      background-color: fade(@color2, 100%);
+    });
   }
 }
