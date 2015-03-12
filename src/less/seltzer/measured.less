@@ -1,0 +1,27 @@
+@import "each";
+
+.measured(@prop; @value) {
+  .each(@value; {
+
+    & when(iscolor(@item)) {
+      &  when (alpha(@item) < 1) {
+        @{prop}+_: rgb(red(@item), green(@item), blue(@item));
+      }
+    }
+
+    & when(isunit(@item, rem)) {
+      @{prop}+_: round((16px * unit(@item)));
+    }
+
+    & when(isunit(@item, vmin)) {
+      @{prop}+_: unit(@item, vm);
+    }
+
+    & when(iskeyword(@item)) {
+      @{prop}+_: @item;
+    }
+
+  });
+
+  @{prop}: @value;
+}

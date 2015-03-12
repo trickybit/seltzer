@@ -1,0 +1,10 @@
+.middle(@n, @rules) {
+  &:nth-last-child(@{n}):first-child {
+    @m: round(@n/2);
+    
+    &:nth-child(@{m}),
+    ~ :nth-child(@{m}) {
+      @rules();
+    }
+  }
+}

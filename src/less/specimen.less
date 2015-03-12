@@ -1,0 +1,130 @@
+@import "seltzer/for";
+@import "seltzer/each";
+@import "seltzer/in";
+@import "seltzer/measured";
+@import "seltzer/middle";
+@import "seltzer/oldie";
+@import "seltzer/ratio";
+@import "seltzer/slice";
+@import "seltzer/total";
+
+.abc {
+  .for(1, 3; {
+    :nth-child(@{count}) {
+      left: @to - @count;
+    };
+  });
+}
+
+.abc {
+  .each(its, easy, as; {
+    @{item}: @count;
+  });
+}
+
+.abc {
+  .in(its 1, easy 2, as 3; {
+    @{key}: @value;
+  });
+}
+.measured-test {
+  .measured(font-size, 1rem);
+  .measured(width, 100vmin);
+  .measured(color, fade(green, 50%));
+  .measured(border; 1rem solid fade(red,50%));
+  .measured(margin; 10vmin auto);
+}
+
+.middle-test {
+  .test {
+    .middle(2, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(3, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(5, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(8, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(13, {
+      ~ .test {
+        clear: left;
+      }
+    });
+  }
+}
+
+.oldie-test {
+  .oldie(9, 10; {
+    ie: older;
+  });
+  .oldie(11; {
+    ie: newer;
+  });
+}
+
+.ratio-test {
+  article {
+    .ratio(100%; 3 of 4; {
+      width: @ratio;
+    });
+  }
+  aside {
+    .ratio(100%; 1 of 4; {
+      width: @ratio;
+    });
+  }
+}
+
+.slice-test {
+  :root {
+    @row-alignments: top middle bottom;
+    @col-alignments: left center right;
+
+    .slice.off.col(3 x 3; 5; {
+      text-align: extract(@col-alignments, @slice-offset);
+    });
+
+    .slice.off.row(3 x 3; 5; {
+      vertical-align: extract(@row-alignments, @slice-offset);
+    });
+
+    .stem {
+      .slice.off.col.flip(3 x 3; 1; {
+        text-align: extract(@col-alignments, @slice-offset);
+      });
+    }
+  }
+}
+
+.total-test {
+  @color: limegreen;
+  background-color: silver;
+
+  .total(1, {
+    background-color: fade(@color, 20%);
+  });
+  .total(2, {
+    background-color: fade(@color, 40%);
+  });
+  .total(3, {
+    background-color: fade(@color, 60%);
+  });
+  .total(4, {
+    background-color: fade(@color, 80%);
+  });
+  .total(5, {
+    background-color: @color;
+  });
+}

@@ -1,0 +1,10 @@
+.each(@list; @rules) {
+  .iterate(@list; @count; @rules) when (@count > 0)  {
+    .iterate(@list; (@count - 1); @rules);
+    & {
+      @item: extract(@list, @count);
+      @rules();
+    }
+  }
+  .iterate(@list; length(@list); @rules);
+}
