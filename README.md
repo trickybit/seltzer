@@ -106,6 +106,33 @@ margin: 10vm auto;
 margin: 10vmin auto;
 ```
 
+### Middle
+Apply a ruleset to the middle child within a given number of items. Check out a working example of [Middle on CodePen](http://codepen.io/tappily/pen/LEgLGX)
+
+#### Input
+```less
+.child {
+  .middle(3, {
+    clear: left;
+  });
+  .middle(4, {
+    clear: left;
+  });
+}
+```
+#### Output
+```css
+.child:nth-last-child( 3):first-child:nth-child( 2),
+.child:nth-last-child( 3):first-child ~ :nth-child( 2) {
+  clear: left;
+}
+
+.child:nth-last-child( 4):first-child:nth-child( 2),
+.child:nth-last-child( 4):first-child ~ :nth-child( 2) {
+  clear: left;
+}
+```
+
 ### Oldie
 Mix in a ruleset for a specified version of Internet Explorer. To support versions below 10 requires conditional compiler comments wrapping a parent element.
 
