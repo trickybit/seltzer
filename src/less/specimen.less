@@ -2,10 +2,12 @@
 @import "seltzer/each";
 @import "seltzer/in";
 @import "seltzer/measured";
+@import "seltzer/middle";
 @import "seltzer/oldie";
 @import "seltzer/ratio";
 @import "seltzer/slice";
 @import "seltzer/unset";
+@import "seltzer/total";
 
 .abc {
   .for(1, 3; {
@@ -32,6 +34,36 @@
   .measured(color, fade(green, 50%));
   .measured(border; 1rem solid fade(red,50%));
   .measured(margin; 10vmin auto);
+}
+
+.middle-test {
+  .test {
+    .middle(2, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(3, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(5, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(8, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(13, {
+      ~ .test {
+        clear: left;
+      }
+    });
+  }
 }
 
 .oldie-test {
@@ -73,9 +105,13 @@
       .slice.off.col.flip(3 x 3; 1; {
         text-align: extract(@col-alignments, @slice-offset);
       });
+      .slice.off.row.flip(3 x 3; 1; {
+        vertical-align: extract(@row-alignments, @slice-offset);
+      });
     }
   }
 }
+
 .unset-test {
   &-bg {
     .unset(background);
@@ -200,4 +236,25 @@
     .unset(resize);
     .unset(vertical-align);
   }
+}
+
+.total-test {
+  @color: limegreen;
+  background-color: silver;
+
+  .total(1, {
+    background-color: fade(@color, 20%);
+  });
+  .total(2, {
+    background-color: fade(@color, 40%);
+  });
+  .total(3, {
+    background-color: fade(@color, 60%);
+  });
+  .total(4, {
+    background-color: fade(@color, 80%);
+  });
+  .total(5, {
+    background-color: @color;
+  });
 }

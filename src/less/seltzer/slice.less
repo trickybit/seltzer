@@ -1,15 +1,19 @@
 .slice() {
-  
+
   .off(@slice-offset, @rules) {
-    
+    @rules();
+  }
+
+  .off() {
     .row(@of, @n, @rules) {
-      
       & {
         @cols: extract(@of, 1);
         .slice.off.row.calc(@cols, @n);
         .slice.off(@offset, @rules);
       }
+    }
 
+    .row() {
       .calc(@length, @n) {
         @offset: ceil(@n / @length);
       }
@@ -21,7 +25,6 @@
           .slice.off(abs((@offset - @cols) - 1), @rules);
         }
       }
-
     }
 
     .col(@of, @n, @rules) {
@@ -31,24 +34,22 @@
         .slice.off.col.calc(@rows, @n);
         .slice.off(@offset, @rules);
       }
+    }
 
+    .col() {
       .calc(@length, @n) {
         @offset: mod((@n - 1), @length) + 1;
       }
 
       .flip(@of, @n, @rules) {
-        
+
         & {
           @rows: extract(@of, 1);
           .slice.off.col.calc(@rows, @n);
           .slice.off(abs((@offset - @rows) - 1), @rules);
         }
-        
+
       }
-
     }
-
-    @rules();
-    
   }
 }

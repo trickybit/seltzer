@@ -106,6 +106,33 @@ margin: 10vm auto;
 margin: 10vmin auto;
 ```
 
+### Middle
+Apply a ruleset to the middle child within a given number of items. Check out a working example of [Middle on CodePen](http://codepen.io/tappily/pen/LEgLGX)
+
+#### Input
+```less
+.child {
+  .middle(3, {
+    clear: left;
+  });
+  .middle(4, {
+    clear: left;
+  });
+}
+```
+#### Output
+```css
+.child:nth-last-child( 3):first-child:nth-child( 2),
+.child:nth-last-child( 3):first-child ~ :nth-child( 2) {
+  clear: left;
+}
+
+.child:nth-last-child( 4):first-child:nth-child( 2),
+.child:nth-last-child( 4):first-child ~ :nth-child( 2) {
+  clear: left;
+}
+```
+
 ### Oldie
 Mix in a ruleset for a specified version of Internet Explorer. To support versions below 10 requires conditional compiler comments wrapping a parent element.
 
@@ -207,6 +234,7 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
   text-align: right;
 }
 ```
+
 ##Unset
 Unset css properties like the [keyword](//developer.mozilla.org/en-US/docs/Web/CSS/unset) does, but  in a way that also supports older browsers. This will not support CSS properties that are only available in browsers supporting the unset keyword.
 
@@ -224,5 +252,28 @@ Unset css properties like the [keyword](//developer.mozilla.org/en-US/docs/Web/C
   background: none;
   flex: 0 1 auto;
   transform-origin: 50% 50% 0;
+```
+
+### Total
+Apply a ruleset when there is a specified total of children. http://alistapart.com/article/quantity-queries-for-css
+#### Input
+```less
+.child {
+  .total(1, {
+    background-color: limegreen;
+  });
+  .total(2, {
+    background-color: yellow;
+  });
+}
+```
+#### Output
+```less
+.child:only-child {
+  background-color: limegreen;
+}
+.child:nth-last-child( 2):first-child,
+.child:nth-last-child( 2):first-child ~ :nth-child( -n + 2) {
+  background-color: yellow;
 }
 ```
