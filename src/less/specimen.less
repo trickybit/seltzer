@@ -104,6 +104,9 @@
       .slice.off.col.flip(3 x 3; 1; {
         text-align: extract(@col-alignments, @slice-offset);
       });
+      .slice.off.row.flip(3 x 3; 1; {
+        vertical-align: extract(@row-alignments, @slice-offset);
+      });
     }
   }
 }
