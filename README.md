@@ -235,7 +235,7 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
 }
 ```
 ### Total
-Apply a ruleset when there is a specified total of children. http://alistapart.com/article/quantity-queries-for-css
+Apply a ruleset when there is a specified total number of children. This one's largely based on [quantity-queries-for-css](//alistapart.com/article/quantity-queries-for-css). Check out a working example of [Total on CodePen](//codepen.io/tappily/pen/NPOpbM).
 #### Input
 ```less
 .child {
