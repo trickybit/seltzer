@@ -14,6 +14,26 @@ Import with a namepsace.
 .seltzer.each(...)
 ```
 
+### Each
+Iterates over a list, putting an item and count variable in the scope of the ruleset--passed as the last argument.
+
+#### Input
+```less
+.abc {
+  .each(its, easy, as; {
+    @{item}: @count;
+  });
+}
+```
+#### Output
+```css
+.abc {
+  its: 1;
+  easy: 2;
+  as: 3;
+}
+```
+
 ### For
 Iterates through a number range, putting a to, from and count variable in the scope of the ruleset--passed as the last argument.
 
@@ -37,26 +57,6 @@ Iterates through a number range, putting a to, from and count variable in the sc
 }
 .abc :nth-child( 3) {
   left: 0;
-}
-```
-
-### Each
-Iterates over a list, putting an item and count variable in the scope of the ruleset--passed as the last argument.
-
-#### Input
-```less
-.abc {
-  .each(its, easy, as; {
-    @{item}: @count;
-  });
-}
-```
-#### Output
-```css
-.abc {
-  its: 1;
-  easy: 2;
-  as: 3;
 }
 ```
 
