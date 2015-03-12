@@ -2,6 +2,7 @@
 @import "seltzer/each";
 @import "seltzer/in";
 @import "seltzer/measured";
+@import "seltzer/middle";
 @import "seltzer/oldie";
 @import "seltzer/ratio";
 @import "seltzer/slice";
@@ -32,6 +33,36 @@
   .measured(color, fade(green, 50%));
   .measured(border; 1rem solid fade(red,50%));
   .measured(margin; 10vmin auto);
+}
+
+.middle-test {
+  .test {
+    .middle(2, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(3, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(5, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(8, {
+      ~ .test {
+        clear: left;
+      }
+    });
+    .middle(13, {
+      ~ .test {
+        clear: left;
+      }
+    });
+  }
 }
 
 .oldie-test {
