@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     },
     release: {
       options: {
-        file: 'bower.json'
+        additionalFiles: ['bower.json']
       }
     },
     watch: {
