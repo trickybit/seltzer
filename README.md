@@ -21,7 +21,7 @@ Iterates through a number range, putting a to, from and count variable in the sc
 ```less
 .abc {
   .for(1, 3; {
-    :nth-child(@{count}) { 
+    :nth-child(@{count}) {
       left: @to - @count;
     };
   });
@@ -61,7 +61,7 @@ Iterates over a list, putting an item and count variable in the scope of the rul
 ```
 
 ### In
-Iterates over a list, putting a key and value variable in the scope of the ruleset--passed as the last argument. 
+Iterates over a list, putting a key and value variable in the scope of the ruleset--passed as the last argument.
 The variables are extracted using the whitespace in each item.
 
 #### Input
@@ -208,15 +208,15 @@ Puts a slice-offset variable in the ruleset scope. Use the offset number to extr
 :root {
   @row-alignments: top middle bottom;
   @col-alignments: left center right;
-  
+
   .slice.off.col(3 x 3; 5; {
     text-align: extract(@col-alignments, @slice-offset);
   });
-  
+
   .slice.off.row(3 x 3; 5; {
     vertical-align: extract(@row-alignments, @slice-offset);
   });
-  
+
   .stem {
     .slice.off.col.flip(3 x 3; 1; {
       text-align: extract(@col-alignments, @slice-offset);
